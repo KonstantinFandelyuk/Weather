@@ -1,0 +1,16 @@
+@import '/src/style/variables.scss';
+
+.header {
+  height: 90px;
+  padding: 34px 0;
+  background-color: $bg-header;
+  .nav {
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-item {
+      }
+    }
+  }
+}

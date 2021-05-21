@@ -1,0 +1,89 @@
+.weather-info {
+  height: 370px;
+  .header {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      &:first-child {
+        color: white;
+      }
+    }
+    .search {
+      font-size: 1.5rem;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        right: 50px;
+        width: 16px;
+        height: 16px;
+        background-image: url('/assets/images/content/icon-search/search.png');
+        background-repeat: no-repeat;
+      }
+      label {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 8px;
+        left: 20px;
+        transition: 0.3s linear;
+        color: rgb(80, 75, 75);
+      }
+      input {
+        background-color: transparent;
+        border-radius: 20px;
+        border: 1px solid rgb(255, 255, 255);
+        padding: 5px 15px;
+        color: black;
+        margin-right: 10px;
+        &:not(:placeholder-shown) + label {
+          top: 8px;
+          left: -85px;
+          transition: 0.3s linear;
+        }
+      }
+      button {
+        background-color: transparent;
+        background-image: url('/assets/images/content/icon-search/arrow.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s linear;
+        &:hover {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+  .cards {
+    margin-bottom: 140px;
+    color: white;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  }
+  .city {
+    color: white;
+    &__list {
+      &-item {
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: 0.3s linear;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          transition: 0.3s linear;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

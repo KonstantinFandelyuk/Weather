@@ -1,0 +1,68 @@
+@import './variables.scss';
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: $body;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+}
+
+a:hover {
+  transition-duration: 0.3s;
+}
+
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+button,
+input[type='submit'] {
+  cursor: pointer;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $body;
+  background-image: url('/assets/images/content/bg.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+  @media (max-width: 1110px) {
+    padding: 0 15px;
+  }
+}

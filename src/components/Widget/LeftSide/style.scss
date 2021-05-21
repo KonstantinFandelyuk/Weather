@@ -1,0 +1,74 @@
+@import '/src/style/variables.scss';
+
+.leftSide {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  border-radius: 25px;
+  background-image: url('https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  transition: all ease-in-out 0.256s;
+  transform: translateZ(500px) perspective(500px) scale(1.04);
+  -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
+  -o-transform: translateZ(500px) perspective(800px) scale(1.04);
+  box-shadow: 0 0 8px -1px #262626;
+  -webkit-box-shadow: 0 0 8px -1px #262626;
+  border: none;
+  transition: all cubic-bezier(0.34, 0.85, 0.35, 0.86) 0.45s;
+}
+
+.leftSide:hover {
+  transform: translateZ(500px) scale(1.08) perspective(20000px) rotateY(10deg);
+  -webkit-transform: translateZ(500px) scale(1.08) perspective(20000px) rotateY(10deg);
+  box-shadow: 0 0 30px -1px #262626;
+  -webkit-box-shadow: 0 0 30px -1px #262626;
+  transform-style: preserve-3d;
+}
+
+.dateContainer {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.day {
+  display: block;
+  font-size: 40px;
+  font-weight: 900;
+}
+.date {
+  display: block;
+  font-size: 18px;
+}
+.location {
+  display: inline-block;
+  padding-top: 10px;
+}
+.pin {
+  display: inline-block;
+  width: auto;
+  margin-right: 2px;
+  height: 0.8em;
+}
+
+.LilInfoContainer {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+.WeatherIcon {
+  height: 100px;
+  width: auto;
+}
+.MainDeg {
+  display: block;
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.Description {
+  font-size: 1.4rem;
+}
