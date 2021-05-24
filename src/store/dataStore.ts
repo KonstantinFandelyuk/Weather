@@ -1,11 +1,11 @@
-import { IData, ILocation, ISearchData } from './../types/types';
+import { IData, IGeoCords, ILocation, ISearchData } from './../types/types';
 import { makeAutoObservable, action } from 'mobx';
-import { fetchForecast, fetchSearch } from '../api/apiWeather';
-// import { toJS } from 'mobx';
+import { fetchForecast, fetchSearch, fetchMapsCity } from '../api/apiWeather';
+import { toJS } from 'mobx';
 
 class dataStore {
   loading: boolean = false;
-  currentCity: string = 'Kiev';
+  currentCity?: string;
   currentWeather?: IData;
   locationInfo?: ILocation;
   dataForecast = [];
@@ -17,6 +17,7 @@ class dataStore {
     makeAutoObservable(this, {
       getCurrentWeather: action.bound,
       getSearchList: action.bound,
+      getCityForCords: action.bound,
       inputSearch: action.bound,
       submitSearchCity: action.bound,
       updateCurrentCity: action.bound,
@@ -61,6 +62,18 @@ class dataStore {
     if (response) {
       this.searchList = response.data;
       this.isLoading(false);
+    }
+  }
+  async getCityForCords(value: IGeoCords) {
+    const response = await fetchMapsCity(value);
+    console.log(`response.data`, response.data.city);
+    if (response) {
+      if (response.data.city === 'Kyiv') {
+        this.currentCity = 'Kiev';
+      } else {
+        this.currentCity = response?.data?.city;
+      }
+      this.getCurrentWeather();
     }
   }
 }

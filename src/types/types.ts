@@ -90,3 +90,8 @@ export interface ISearchData {
   region: string;
   url: string;
 }
+
+export interface IGeoCords {
+  latitude: number;
+  longitude: number;
+}
