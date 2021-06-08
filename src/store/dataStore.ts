@@ -1,7 +1,7 @@
 import { IData, IGeoCords, ILocation, ISearchData } from './../types/types';
 import { makeAutoObservable, action } from 'mobx';
 import { fetchForecast, fetchSearch, fetchMapsCity } from '../api/apiWeather';
-import { toJS } from 'mobx';
+// import { toJS } from 'mobx';
 
 class dataStore {
   loading: boolean = false;
@@ -33,9 +33,13 @@ class dataStore {
   }
 
   submitSearchCity() {
-    this.getSearchList(this.searchText);
-    this.isShowList = true;
-    this.searchText = '';
+    if (this.searchText.length > 2) {
+      this.getSearchList(this.searchText);
+      this.isShowList = true;
+      this.searchText = '';
+    } else {
+      alert('Enter the name of the city');
+    }
   }
 
   updateCurrentCity(value: string) {

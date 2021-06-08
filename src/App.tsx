@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { Widget } from './components/Widget';
 import { Loader } from './components/Loader';
-import { observer } from 'mobx-react-lite'; // Or "mobx-react".
+import { observer } from 'mobx-react-lite';
 import dataStore from './store/dataStore';
 import { IGeoCords } from './types/types';
 
