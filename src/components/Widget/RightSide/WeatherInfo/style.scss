@@ -1,9 +1,13 @@
 .weather-info {
   height: 370px;
+  @media (max-width: 1110px) {
+    height: 250px;
+  }
   .header {
     margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
+
     div {
       &:first-child {
         color: white;
